@@ -1,0 +1,27 @@
+{
+  "name": "electron-sword",
+  "version": "1.0.0",
+  "description": "> An electron-vue project",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron ./src/main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jamesmh/electron-sword.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jamesmh/electron-sword/issues"
+  },
+  "homepage": "https://github.com/jamesmh/electron-sword#readme",
+  "dependencies": {
+    "electron": "^1.6.2"
+  },
+  "devDependencies": {
+    "bootstrap": "^4.0.0-alpha.6",
+    "jquery": "^3.1.1"
+  }
+}

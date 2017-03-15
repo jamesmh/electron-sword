@@ -18,7 +18,8 @@
   },
   "homepage": "https://github.com/jamesmh/electron-sword#readme",
   "dependencies": {
-    "electron": "^1.6.2"
+    "electron": "^1.6.2",
+    "tether": "^1.4.0"
   },
   "devDependencies": {
     "bootstrap": "^4.0.0-alpha.6",

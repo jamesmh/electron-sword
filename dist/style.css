@@ -1,0 +1,25 @@
+
+.main[data-v-0b7871d6] {
+    text-align: center;
+}
+.welcome[data-v-0b7871d6] {
+    margin-top:80px;
+}
+.instructions[data-v-0b7871d6] {
+    font-size: 14px;
+    width: 80%;
+    margin: 0 auto;
+    font-weight: 200;
+}
+.gap[data-v-0b7871d6] {
+    margin-top: 60px;
+}
+
+.form-group input[data-v-7f68a1a2] {
+    background-color: transparent;
+    color: #eee;
+}
+input&[data-v-7f68a1a2]:active {
+    border-color: #5cb3fd
+}              
+

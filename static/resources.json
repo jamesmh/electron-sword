@@ -1,0 +1,10 @@
+{
+    "welcome": {
+        "instructions": "Welcome to Electron Sword! This is a free / open-source product designed to bring a modern twist to bible reading. Because this program is free to use, we only have a short selection of bible translations to select from. We hope that you enjoy using Electron Sword!"
+    },
+
+    "welcome-search": {
+        "label": "Enter a book, passage or section you would like to read.",
+        "placeholder": "Matthew 10:22"
+    }
+}

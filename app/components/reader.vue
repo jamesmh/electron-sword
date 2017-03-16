@@ -3,7 +3,7 @@
         <p class="content" v-html="text"></p>
         <router-link to="/" class="home-link">Go Back Home</router-link>
         <router-link :to="{ name: 'book', params: { id: bookId + 1 } }" class="next">Next Chapter</router-link>
-        <div v-if="bookId > 0">
+        <div v-if="bookId > 1">
             <router-link :to="{ name: 'book', params: { id: bookId - 1 } }" class="prev">Previous Chapter</router-link>
         </div>
     </div>
@@ -42,17 +42,16 @@ export default {
         position: fixed;
         padding: 8px;
         border-radius: 8px;
-        background-color: #111;
-        color:#5cb3fd;
-        opacity: .1;
-        height:0;
+        background-color: #333;
+        border: 1px solid #333;
+        color: #fff;
+        opacity: .3;
         transition: .3s all;
 
         &:hover {
-            height: auto;
             opacity: 1;
-            background-color: #5cb3fd;
-            color: #111;
+            border-color: #5cb3fd;
+            color: #5cb3fd;
         }
     }
 

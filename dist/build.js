@@ -14558,7 +14558,7 @@ exports = module.exports = __webpack_require__(1)(undefined);
 
 
 // module
-exports.push([module.i, "\n.home-link[data-v-19d3417f], .next[data-v-19d3417f], .prev[data-v-19d3417f] {\n  position: fixed;\n  padding: 8px;\n  border-radius: 8px;\n  background-color: #111;\n  color: #5cb3fd;\n  opacity: .1;\n  transition: .3 all;\n}\n.home-link[data-v-19d3417f]:hover, .next[data-v-19d3417f]:hover, .prev[data-v-19d3417f]:hover {\n    opacity: 1;\n    background-color: #5cb3fd;\n    color: #111;\n}\n.home-link[data-v-19d3417f] {\n  top: 8px;\n  right: 8px;\n}\n.next[data-v-19d3417f] {\n  bottom: 8px;\n  right: 8px;\n}\n.prev[data-v-19d3417f] {\n  bottom: 8px;\n  left: 8px;\n}\n.content[data-v-19d3417f] {\n  padding: 20px;\n  font-size: 14px;\n}\n", ""]);
+exports.push([module.i, "\n.home-link[data-v-19d3417f], .next[data-v-19d3417f], .prev[data-v-19d3417f] {\n  position: fixed;\n  padding: 8px;\n  border-radius: 8px;\n  background-color: #333;\n  border: 1px solid #333;\n  color: #fff;\n  opacity: .3;\n  transition: .3s all;\n}\n.home-link[data-v-19d3417f]:hover, .next[data-v-19d3417f]:hover, .prev[data-v-19d3417f]:hover {\n    opacity: 1;\n    border-color: #5cb3fd;\n    color: #fff;\n}\n.home-link[data-v-19d3417f] {\n  top: 8px;\n  right: 8px;\n}\n.next[data-v-19d3417f] {\n  bottom: 8px;\n  right: 8px;\n}\n.prev[data-v-19d3417f] {\n  bottom: 8px;\n  left: 8px;\n}\n.content[data-v-19d3417f] {\n  padding: 20px;\n  font-size: 14px;\n}\n", ""]);
 
 // exports
 
@@ -32109,7 +32109,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         }
       }
     }
-  }, [_vm._v("Next Chapter")]), _vm._v(" "), (_vm.bookId > 0) ? _c('div', [_c('router-link', {
+  }, [_vm._v("Next Chapter")]), _vm._v(" "), (_vm.bookId > 1) ? _c('div', [_c('router-link', {
     staticClass: "prev",
     attrs: {
       "to": {

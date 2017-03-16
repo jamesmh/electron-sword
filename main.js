@@ -5,7 +5,6 @@ const fs = require('fs');
 global.Sword = {
   resources: require('./electron/bootstrap/loadJson').From(path.join(__dirname, "static", "resources.json"))
 };
-
 require('./electron/bootstrap/ipcRegistration').Register(ipcMain);
 
 app.on("ready", _ => {

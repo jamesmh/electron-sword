@@ -1,12 +1,12 @@
 const Register = (ipcMain) => {
-        for (key in events) {
-            ipcMain.on(key, events[key]);
-        }
+    for (key in events) {
+        ipcMain.on(key, events[key]);
     }
+}
 
 
 const events = {
-    //"get-resources": require('../events/get-resources')
+    "fetch-books": require('../events/fetch-books')
 }
 
 module.exports = {

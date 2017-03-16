@@ -6,8 +6,8 @@
         </p>
 
         <div class="gap"></div>
-
         <welcome-search></welcome-search>
+        <book-list></book-list>
     </div>
 </template>
 

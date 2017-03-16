@@ -21,6 +21,10 @@ module.exports = {
                 test: /\.js$/,
                 loader: 'babel-loader',
                 exclude: /node_modules/
+            },
+             {
+                test: /\.s[a|c]ss$/,
+                loader: 'style!css!sass'
             }
         ],
         rules: [{
@@ -28,10 +32,11 @@ module.exports = {
                 loader: 'vue-loader',
                 options: {
                     loaders: {
+                        scss: 'style-loader!css-loader!sass-loader',
                         css: ExtractTextPlugin.extract({
                             use: 'css-loader',
                             fallback: 'vue-style-loader' // <- this is a dep of vue-loader, so no need to explicitly install if using npm3
-                        })
+                        }),                        
                     }
                 }
             },
@@ -57,8 +62,8 @@ module.exports = {
         extractSass
     ],
     resolve: {
-    alias: {
-      'vue$': 'vue/dist/vue.esm.js' // 'vue/dist/vue.common.js' for webpack 1
-    }
-  }
+        alias: {
+        'vue$': 'vue/dist/vue.esm.js' // 'vue/dist/vue.common.js' for webpack 1
+        }
+    } 
 };

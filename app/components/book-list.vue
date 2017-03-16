@@ -43,16 +43,21 @@
     } 
 </script>
 
-<style scoped>
+<style scoped lang="scss">
     .books {
-        padding-left:20%;
-        padding-right:20%;   
-        overflow-y: scroll;
-    }
+        padding-left:10%;
+        padding-right:10%;  
 
-    .books ul li {
-        list-style: none;
-        margin-top: 6px;
-        margin-bottom: 6px;
-    }
+        ul li {
+            list-style: none;
+            margin-top: 2px;
+            margin-bottom: 2px;
+            padding-top: 2px;
+            padding-bottom: 2px;
+
+            &:active {
+                color: #5cb3fd;
+            }
+        } 
+    }   
 </style>

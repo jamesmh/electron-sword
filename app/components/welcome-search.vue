@@ -30,14 +30,14 @@
     }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
     .form-group input {
         background-color: transparent;
         color: #eee;
-    }
 
-    input&:active {
-        border-color: #5cb3fd
-    }              
+        &:active {
+            border-color: #5cb3fd;
+        }          
+    }  
     
 </style>

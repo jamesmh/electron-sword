@@ -14,23 +14,3 @@
 .gap[data-v-0b7871d6] {
     margin-top: 60px;
 }
-
-.form-group input[data-v-7f68a1a2] {
-    background-color: transparent;
-    color: #eee;
-}
-input&[data-v-7f68a1a2]:active {
-    border-color: #5cb3fd
-}              
-
-
-.books[data-v-58397f14] {
-    padding-left:20%;
-    padding-right:20%;   
-    overflow-y: scroll;
-}
-.books ul li[data-v-58397f14] {
-    list-style: none;
-    margin-top: 6px;
-    margin-bottom: 6px;
-}

@@ -1,5 +1,5 @@
 <template>
-    <div class="main">
+    <div class="main">        
         <h1 class="welcome">Welcome!</h1>
         <p class="instructions">
             {{ instructions }}

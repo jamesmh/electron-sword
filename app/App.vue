@@ -1,6 +1,8 @@
 <template>
     <div class="container-fluid">
-        <router-view></router-view>
+        <slide-transition>
+            <router-view></router-view>
+        </slide-transition>
     </div>
 </template>
 

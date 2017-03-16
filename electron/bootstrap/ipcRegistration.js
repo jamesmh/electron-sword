@@ -6,7 +6,8 @@ const Register = (ipcMain) => {
 
 
 const events = {
-    "fetch-books": require('../events/fetch-books')
+    "fetch-books": require('../events/fetch-books'),
+    "fetch-content": require("../events/fetch-content")
 }
 
 module.exports = {

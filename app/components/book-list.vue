@@ -4,8 +4,8 @@
             <div class="col col-6" v-for="t in testaments">      
                 <ul v-for="book in t">
                     <li>
-                        <a>{{ book.name }}</a>
-                    </li>  
+                        <router-link :to="{ name: 'book', params: { id: book.id } }">{{ book.name }}</router-link>
+                    </li> 
                 </ul>            
             </div>
         </div>
@@ -26,11 +26,11 @@
             testaments() {
                 if(this.books.length > 0) {
                     return _(this.books).map(book => ({
-                        order: book.b,
+                        id: book.b,
                         name: book.n,
                         testament: book.t
                     }))
-                    .orderBy("order")
+                    .orderBy("id")
                     .groupBy("testament")
                     .value();
                 }

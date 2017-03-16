@@ -12492,6 +12492,9 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
+//
+//
+//
 
 exports.default = {
     props: ['bookId'],
@@ -14555,7 +14558,7 @@ exports = module.exports = __webpack_require__(1)(undefined);
 
 
 // module
-exports.push([module.i, "\n.home-link[data-v-19d3417f] {\n  position: fixed;\n  top: 8px;\n  right: 8px;\n  padding: 4px;\n  background-color: #999;\n  border-radius: 8px;\n}\n", ""]);
+exports.push([module.i, "\n.home-link[data-v-19d3417f], .next[data-v-19d3417f], .prev[data-v-19d3417f] {\n  position: fixed;\n  padding: 8px;\n  border-radius: 8px;\n  background-color: #111;\n  color: #5cb3fd;\n  opacity: .1;\n  transition: .3 all;\n}\n.home-link[data-v-19d3417f]:hover, .next[data-v-19d3417f]:hover, .prev[data-v-19d3417f]:hover {\n    opacity: 1;\n    background-color: #5cb3fd;\n    color: #111;\n}\n.home-link[data-v-19d3417f] {\n  top: 8px;\n  right: 8px;\n}\n.next[data-v-19d3417f] {\n  bottom: 8px;\n  right: 8px;\n}\n.prev[data-v-19d3417f] {\n  bottom: 8px;\n  left: 8px;\n}\n.content[data-v-19d3417f] {\n  padding: 20px;\n  font-size: 14px;\n}\n", ""]);
 
 // exports
 
@@ -32086,7 +32089,8 @@ module.exports = Component.exports
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', [_c('h1', [_vm._v("Read")]), _vm._v(" "), _c('p', {
+  return _c('div', [_c('p', {
+    staticClass: "content",
     domProps: {
       "innerHTML": _vm._s(_vm.text)
     }
@@ -32095,7 +32099,27 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "to": "/"
     }
-  }, [_vm._v("Go Back Home")])], 1)
+  }, [_vm._v("Go Back Home")]), _vm._v(" "), _c('router-link', {
+    staticClass: "next",
+    attrs: {
+      "to": {
+        name: 'book',
+        params: {
+          id: _vm.bookId + 1
+        }
+      }
+    }
+  }, [_vm._v("Next Chapter")]), _vm._v(" "), (_vm.bookId > 0) ? _c('div', [_c('router-link', {
+    staticClass: "prev",
+    attrs: {
+      "to": {
+        name: 'book',
+        params: {
+          id: _vm.bookId - 1
+        }
+      }
+    }
+  }, [_vm._v("Previous Chapter")])], 1) : _vm._e()], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {

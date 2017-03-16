@@ -1,8 +1,11 @@
 <template>
     <div>
-        <h1>Read</h1>
         <p class="content" v-html="text"></p>
         <router-link to="/" class="home-link">Go Back Home</router-link>
+        <router-link :to="{ name: 'book', params: { id: bookId + 1 } }" class="next">Next Chapter</router-link>
+        <div v-if="bookId > 0">
+            <router-link :to="{ name: 'book', params: { id: bookId - 1 } }" class="prev">Previous Chapter</router-link>
+        </div>
     </div>
 </template>
 
@@ -35,17 +38,41 @@ export default {
 </script>
 
 <style scoped lang="scss">
-    .home-link {
+    .home-link, .next, .prev {
         position: fixed;
-        top: 8px;
-        right: 8px;
-        padding: 4px;
-        background-color: #999;
+        padding: 8px;
         border-radius: 8px;
+        background-color: #111;
+        color:#5cb3fd;
+        opacity: .1;
+        height:0;
+        transition: .3s all;
+
+        &:hover {
+            height: auto;
+            opacity: 1;
+            background-color: #5cb3fd;
+            color: #111;
+        }
+    }
+
+    .home-link {
+        top: 8px;
+        right: 8px;      
+    }
+
+    .next {
+        bottom: 8px;
+        right:8px;
+    }
+
+    .prev {
+        bottom: 8px;
+        left: 8px;
     }
 
     .content {
-        padding: 40px;
-        font-size: 12px;
+        padding: 20px;
+        font-size: 14px;
     }
 </style>

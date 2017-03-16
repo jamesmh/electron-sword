@@ -7,6 +7,7 @@ import registerGlobals from './registerGlobals';
 import "../static/sass/styles.scss";
 
 Vue.prototype.$globals = registerGlobals();
+Vue.prototype.$ipc = require('electron').ipcRenderer;
 registerComponents(Vue);
 
 Vue.use(VueRouter)

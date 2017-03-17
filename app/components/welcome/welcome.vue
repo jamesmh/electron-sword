@@ -1,16 +1,14 @@
 <template>
-    <slide-transition direction="up">
-        <div class="main">
-            <h1 class="welcome">Welcome!</h1>
-            <p class="instructions">
-                {{ instructions }}
-            </p>
+    <div class="main">
+        <h1 class="welcome">Welcome!</h1>
+        <p class="instructions">
+            {{ instructions }}
+        </p>
 
-            <div class="gap"></div>
-            <welcome-search></welcome-search>
-            <book-list></book-list>
-        </div>
-    </slide-transition>
+        <div class="gap"></div>
+        <welcome-search></welcome-search>
+        <book-list></book-list>
+    </div>
 </template>
 
 <script>

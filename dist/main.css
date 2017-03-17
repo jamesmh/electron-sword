@@ -1,17 +1,17 @@
 
-.main[data-v-24a26bf1] {
+.main[data-v-7b18caa9] {
     text-align: center;
 }
-.welcome[data-v-24a26bf1] {
+.welcome[data-v-7b18caa9] {
     margin-top:80px;
 }
-.instructions[data-v-24a26bf1] {
+.instructions[data-v-7b18caa9] {
     font-size: 14px;
     width: 80%;
     margin: 0 auto;
     font-weight: 200;
 }
-.gap[data-v-24a26bf1] {
+.gap[data-v-7b18caa9] {
     margin-top: 60px;
 }
 
@@ -21,6 +21,10 @@
 
 .animated[data-v-3a323608] {
     animation-duration: .6s;
+}
+
+.animated[data-v-9bfc284c] {
+    animation-duration: .3s;
 }
 html {
   min-width: 800px;

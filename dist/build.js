@@ -31843,7 +31843,7 @@ exports = module.exports = __webpack_require__(2)(undefined);
 
 
 // module
-exports.push([module.i, "\n.home-link[data-v-45d586d0],\n.next[data-v-45d586d0],\n.prev[data-v-45d586d0] {\n  padding: 8px;\n  background-color: #333;\n  border: 1px solid #333;\n  color: #fff;\n  transition: .3s all;\n  display: block;\n  text-decoration: none;\n  cursor: pointer;\n  text-align: center;\n}\n.home-link[data-v-45d586d0]:hover,\n  .next[data-v-45d586d0]:hover,\n  .prev[data-v-45d586d0]:hover {\n    border-color: #5cb3fd;\n    background-color: #5cb3fd;\n    color: #fff;\n}\n.content[data-v-45d586d0] {\n  position: absolute;\n  right: 0;\n  width: 90%;\n  padding: 10%;\n  padding-top: 15%;\n  font-size: 18px;\n}\n.navigation[data-v-45d586d0] {\n  height: 120px;\n  width: 120px;\n  position: fixed;\n  left: 4px;\n  top: 4px;\n  border: 4px solid transparent;\n  border: 4px solid transparent;\n  transition: all .3s;\n}\n.navigation[data-v-45d586d0]:hover {\n    border-color: #5cb3fd;\n}\n.navigation .prev-col[data-v-45d586d0] {\n    padding-right: 0;\n}\n.navigation .next-col[data-v-45d586d0] {\n    padding-left: 0;\n}\n.chapters[data-v-45d586d0] {\n  height: auto;\n  width: 160px;\n  background-color: #333;\n  padding: 8px;\n  position: absolute;\n  top: 4px;\n  right: 4px;\n  border: 4px solid transparent;\n  border: 4px solid transparent;\n  transition: all .3s;\n  z-index: 100;\n}\n.chapters[data-v-45d586d0]:hover, .chapters[data-v-45d586d0]:active {\n    border-color: #5cb3fd;\n    border-bottom-radius: 8px;\n}\n.chapters select[data-v-45d586d0] {\n    -webkit-appearance: none;\n    font-size: 12px;\n    font-weight: 300;\n    color: #5cb3fd;\n    background-color: transparent;\n}\n.chapters select[data-v-45d586d0]:active {\n      border-color: #5cb3fd;\n}\n.chapters select option[data-v-45d586d0] {\n      background-color: #333;\n      border-color: #5cb3fd;\n}\n", ""]);
+exports.push([module.i, "\n.home-link[data-v-45d586d0],\n.next[data-v-45d586d0],\n.prev[data-v-45d586d0] {\n  padding: 8px;\n  border: 1px solid #333;\n  color: #fff;\n  transition: .3s all;\n  display: block;\n  text-decoration: none;\n  cursor: pointer;\n  text-align: center;\n}\n.home-link[data-v-45d586d0]:hover,\n  .next[data-v-45d586d0]:hover,\n  .prev[data-v-45d586d0]:hover {\n    border-color: #5cb3fd;\n    background-color: #5cb3fd;\n    color: #fff;\n}\n.content[data-v-45d586d0] {\n  position: absolute;\n  right: 0;\n  width: 90%;\n  padding: 10%;\n  padding-top: 15%;\n  font-size: 18px;\n}\n.navigation[data-v-45d586d0] {\n  background-color: #333;\n  height: 120px;\n  width: 120px;\n  position: fixed;\n  left: 4px;\n  top: 4px;\n  border: 4px solid transparent;\n  border: 4px solid transparent;\n  transition: all .3s;\n  z-index: 500;\n}\n.navigation[data-v-45d586d0]:hover {\n    border-color: #5cb3fd;\n}\n.navigation .prev-col[data-v-45d586d0] {\n    padding-right: 0;\n}\n.navigation .next-col[data-v-45d586d0] {\n    padding-left: 0;\n}\n.chapters[data-v-45d586d0] {\n  height: auto;\n  width: 160px;\n  background-color: #333;\n  padding: 8px;\n  position: absolute;\n  top: 4px;\n  right: 4px;\n  border: 4px solid transparent;\n  border: 4px solid transparent;\n  transition: all .3s;\n  z-index: 500;\n}\n.chapters[data-v-45d586d0]:hover, .chapters[data-v-45d586d0]:active {\n    border-color: #5cb3fd;\n    border-bottom-radius: 8px;\n}\n.chapters select[data-v-45d586d0] {\n    font-size: 12px;\n    font-weight: 500;\n    color: #5cb3fd;\n    border-color: #5cb3fd;\n    background-color: transparent;\n}\n", ""]);
 
 // exports
 
@@ -32406,11 +32406,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "row"
   }, [_c('div', {
     staticClass: "col col-6 prev-col"
-  }, [_c('a', {
+  }, [(!this.isFirstChapter) ? _c('a', {
     staticClass: "prev",
-    attrs: {
-      "disabled": this.isFirstChapter
-    },
     on: {
       "click": _vm.prevChapter
     }
@@ -32419,13 +32416,10 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "aria-hidden": "true"
     }
-  })])]), _vm._v(" "), _c('div', {
+  })]) : _vm._e()]), _vm._v(" "), _c('div', {
     staticClass: "col col-6 next-col"
-  }, [_c('a', {
+  }, [(!this.isLastChapter) ? _c('a', {
     staticClass: "next",
-    attrs: {
-      "disabled": this.isLastChapter
-    },
     on: {
       "click": _vm.nextChapter
     }
@@ -32434,7 +32428,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "aria-hidden": "true"
     }
-  })])])])], 1), _vm._v(" "), _c('p', {
+  })]) : _vm._e()])])], 1), _vm._v(" "), _c('p', {
     staticClass: "content",
     domProps: {
       "innerHTML": _vm._s(_vm.text)

@@ -14,10 +14,10 @@
 
             <div class="row">
                 <div class="col col-6 prev-col">
-                    <a :disabled="this.isFirstChapter" @click="prevChapter" class="prev"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
+                    <a v-if="!this.isFirstChapter" @click="prevChapter" class="prev"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
                 </div>
                 <div class="col col-6 next-col">
-                    <a :disabled="this.isLastChapter" @click="nextChapter" class="next"><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+                    <a v-if="!this.isLastChapter" @click="nextChapter" class="next"><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
                 </div>
             </div>
         </div>
@@ -96,7 +96,6 @@
     .next,
     .prev {
         padding: 8px;
-        background-color: #333;
         border: 1px solid #333;
         color: #fff;
         transition: .3s all;
@@ -121,6 +120,7 @@
     }
     
     .navigation {
+        background-color: #333;
         height:120px;
         width: 120px;
         position: fixed;
@@ -129,6 +129,7 @@
         border: 4px solid transparent;
         border: 4px solid transparent;
         transition: all .3s;
+        z-index: 500;
 
         &:hover {
             border-color: #5cb3fd;
@@ -154,7 +155,7 @@
         border: 4px solid transparent;
         border: 4px solid transparent;
         transition: all .3s;
-        z-index: 100;
+        z-index: 500;
 
         &:hover, &:active {
             border-color: #5cb3fd;
@@ -163,14 +164,10 @@
 
         select {
             font-size: 12px;
-            font-weight: 300;
+            font-weight: 500;
             color: #5cb3fd;
+            border-color: #5cb3fd;
             background-color: transparent;
-
-            option {
-                background-color: #333;
-                border-color: #5cb3fd;
-            }
         }
     }
 </style>

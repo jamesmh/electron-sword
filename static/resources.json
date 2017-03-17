@@ -4,7 +4,7 @@
     },
 
     "welcome-search": {
-        "label": "Enter a book, passage or section you would like to read.",
+        "label": "Enter a book (to filter the list below) or a passage you would like to read.",
         "placeholder": "Matthew 10:22"
     }
 }

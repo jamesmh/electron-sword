@@ -457,7 +457,7 @@ function updateLink(linkElement, options, obj) {
 	on by default.  Otherwise default to the convertToAbsoluteUrls option
 	directly
 	*/
-	const autoFixUrls = options.convertToAbsoluteUrls === undefined && sourceMap;
+	var autoFixUrls = options.convertToAbsoluteUrls === undefined && sourceMap;
 
 	if (options.convertToAbsoluteUrls || autoFixUrls){
 		css = fixUrls(css);
@@ -520,7 +520,7 @@ var Component = __webpack_require__(0)(
   /* cssModules */
   null
 )
-Component.options.__file = "C:\\Users\\jhickey\\Documents\\Personal Work\\electron-sword\\app\\App.vue"
+Component.options.__file = "/home/james/Code/githubrepos/electron-sword/app/App.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] App.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -746,7 +746,7 @@ var Component = __webpack_require__(0)(
   /* cssModules */
   null
 )
-Component.options.__file = "C:\\Users\\jhickey\\Documents\\Personal Work\\electron-sword\\app\\components\\root\\read-book.vue"
+Component.options.__file = "/home/james/Code/githubrepos/electron-sword/app/components/root/read-book.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] read-book.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -784,7 +784,7 @@ var Component = __webpack_require__(0)(
   /* cssModules */
   null
 )
-Component.options.__file = "C:\\Users\\jhickey\\Documents\\Personal Work\\electron-sword\\app\\components\\root\\welcome.vue"
+Component.options.__file = "/home/james/Code/githubrepos/electron-sword/app/components/root/welcome.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] welcome.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -12445,16 +12445,27 @@ Object.defineProperty(exports, "__esModule", {
 var _ = __webpack_require__(29);
 
 exports.default = {
+    props: ['filter'],
     data: function data() {
         return {
             books: []
         };
     },
+    mounted: function mounted() {
+        var _this = this;
+
+        this.$ipc.on('pull-welcome-search', function (e, filter) {
+            return _this.filter = filter;
+        });
+        this.$ipc.on('provide-books', function (event, books) {
+            return _this.books = books;
+        });
+    },
 
 
     computed: {
         testaments: function testaments() {
-            var _this = this;
+            var _this2 = this;
 
             if (this.books.length > 0) {
                 return _(this.books).map(function (book) {
@@ -12463,12 +12474,13 @@ exports.default = {
                         name: book.n,
                         testament: book.t
                     };
+                }).filter(function (book) {
+                    if (_this2.filter && _this2.filter != '') return book.name.toUpperCase().indexOf(_this2.filter.toUpperCase() > -1);
+                    return true;
                 }).orderBy("id").groupBy("testament").value();
             } else {
-                this.$ipc.on('provide-books', function (event, books) {
-                    return _this.books = books;
-                });
                 this.$ipc.send("fetch-books");
+                return [];
             }
         }
     }
@@ -12615,7 +12627,7 @@ exports.default = {
 
     methods: {
         changed: function changed(e) {
-            console.log(e.target.value);
+            this.$ipc.send('push-welcome-search', e.target.value);
         }
     }
 };
@@ -14558,7 +14570,7 @@ exports = module.exports = __webpack_require__(1)(undefined);
 
 
 // module
-exports.push([module.i, "\n.home-link[data-v-19d3417f], .next[data-v-19d3417f], .prev[data-v-19d3417f] {\n  position: fixed;\n  padding: 8px;\n  border-radius: 8px;\n  background-color: #333;\n  border: 1px solid #333;\n  color: #fff;\n  opacity: .3;\n  transition: .3s all;\n}\n.home-link[data-v-19d3417f]:hover, .next[data-v-19d3417f]:hover, .prev[data-v-19d3417f]:hover {\n    opacity: 1;\n    border-color: #5cb3fd;\n    color: #fff;\n}\n.home-link[data-v-19d3417f] {\n  top: 8px;\n  right: 8px;\n}\n.next[data-v-19d3417f] {\n  bottom: 8px;\n  right: 8px;\n}\n.prev[data-v-19d3417f] {\n  bottom: 8px;\n  left: 8px;\n}\n.content[data-v-19d3417f] {\n  padding: 20px;\n  font-size: 14px;\n}\n", ""]);
+exports.push([module.i, "\n.home-link[data-v-19d3417f], .next[data-v-19d3417f], .prev[data-v-19d3417f] {\n  position: fixed;\n  padding: 8px;\n  border-radius: 8px;\n  background-color: #333;\n  border: 1px solid #333;\n  color: #fff;\n  opacity: .3;\n  transition: .3s all;\n}\n.home-link[data-v-19d3417f]:hover, .next[data-v-19d3417f]:hover, .prev[data-v-19d3417f]:hover {\n    opacity: 1;\n    border-color: #5cb3fd;\n    color: #5cb3fd;\n}\n.home-link[data-v-19d3417f] {\n  top: 8px;\n  right: 8px;\n}\n.next[data-v-19d3417f] {\n  bottom: 8px;\n  right: 8px;\n}\n.prev[data-v-19d3417f] {\n  bottom: 8px;\n  left: 8px;\n}\n.content[data-v-19d3417f] {\n  padding: 20px;\n  font-size: 14px;\n}\n", ""]);
 
 // exports
 
@@ -31950,7 +31962,7 @@ var Component = __webpack_require__(0)(
   /* cssModules */
   null
 )
-Component.options.__file = "C:\\Users\\jhickey\\Documents\\Personal Work\\electron-sword\\app\\components\\book-list.vue"
+Component.options.__file = "/home/james/Code/githubrepos/electron-sword/app/components/book-list.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] book-list.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -31988,7 +32000,7 @@ var Component = __webpack_require__(0)(
   /* cssModules */
   null
 )
-Component.options.__file = "C:\\Users\\jhickey\\Documents\\Personal Work\\electron-sword\\app\\components\\reader.vue"
+Component.options.__file = "/home/james/Code/githubrepos/electron-sword/app/components/reader.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] reader.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -32026,7 +32038,7 @@ var Component = __webpack_require__(0)(
   /* cssModules */
   null
 )
-Component.options.__file = "C:\\Users\\jhickey\\Documents\\Personal Work\\electron-sword\\app\\components\\welcome-search.vue"
+Component.options.__file = "/home/james/Code/githubrepos/electron-sword/app/components/welcome-search.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] welcome-search.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -32064,7 +32076,7 @@ var Component = __webpack_require__(0)(
   /* cssModules */
   null
 )
-Component.options.__file = "C:\\Users\\jhickey\\Documents\\Personal Work\\electron-sword\\app\\transitions\\slide.vue"
+Component.options.__file = "/home/james/Code/githubrepos/electron-sword/app/transitions/slide.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] slide.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -32254,7 +32266,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "value": (_vm.userInput)
     },
     on: {
-      "change": _vm.changed,
+      "keypress": _vm.changed,
       "input": function($event) {
         if ($event.target.composing) { return; }
         _vm.userInput = $event.target.value

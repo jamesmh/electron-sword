@@ -16,10 +16,16 @@
     const _ = require('lodash');
 
     export default {
+        props: [ 'filter' ],
         data() {
             return {
                 books: []
             }
+        },
+
+        mounted(){
+            this.$ipc.on('pull-welcome-search', (e, filter) => this.filter = filter);
+            this.$ipc.on('provide-books', (event, books) => this.books = books); 
         },
 
         computed: {
@@ -30,13 +36,18 @@
                         name: book.n,
                         testament: book.t
                     }))
+                    .filter(book => { 
+                        if(this.filter && this.filter != '')
+                            return book.name.toUpperCase().indexOf(this.filter.toUpperCase() > -1)
+                        return true;
+                    })
                     .orderBy("id")
                     .groupBy("testament")
                     .value();
                 }
-                else {
-                    this.$ipc.on('provide-books', (event, books) => this.books = books);                        
+                else {                                           
                     this.$ipc.send("fetch-books");
+                    return [];
                 }                   
             }
         }

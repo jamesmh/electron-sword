@@ -1,57 +1,56 @@
 <template>
     <div>
         <div class="row books">
-            <div class="col col-6" v-for="t in testaments">      
-                <ul v-for="book in t">
-                    <li>
+            <div class="col col-6" v-for="t in testaments"> 
+                <list-transition tag="ul">                
+                    <li v-for="book in t" :key="book">
                         <router-link :to="{ name: 'book', params: { id: book.id } }">{{ book.name }}</router-link>
-                    </li> 
-                </ul>            
+                    </li>   
+                </list-transition>           
             </div>
         </div>
     </div>
 </template>
 
 <script>
-    const _ = require('lodash');
+    import { formatAndFilterBooks } from '../service/bookService';
+    let pullSearchHandler = null;
+    let provideBooksHandler = null;
 
     export default {
-        props: [ 'filter' ],
+        props: ['filter'],
         data() {
             return {
-                books: []
+                books: [],
+                bookFilter: this.filter
             }
         },
 
-        mounted(){
-            this.$ipc.on('pull-welcome-search', (e, filter) => this.filter = filter);
-            this.$ipc.on('provide-books', (event, books) => this.books = books); 
+        mounted() {
+            pullSearchHandler = (e, filterFromSearch) => this.bookFilter = filterFromSearch;
+            provideBooksHandler = (e, books) => this.books = books;
+            this.$ipc.on('pull-welcome-search', pullSearchHandler);
+            this.$ipc.on('provide-books', provideBooksHandler);
+        },
+
+        destroyed () {
+            this.$ipc.removeListener("pull-welcome-search", pullSearchHandler);
+            this.$ipc.removeListener("provide-books", provideBooksHandler);
         },
 
         computed: {
             testaments() {
-                if(this.books.length > 0) {
-                    return _(this.books).map(book => ({
-                        id: book.b,
-                        name: book.n,
-                        testament: book.t
-                    }))
-                    .filter(book => { 
-                        if(this.filter && this.filter != '')
-                            return book.name.toUpperCase().indexOf(this.filter.toUpperCase() > -1)
-                        return true;
-                    })
-                    .orderBy("id")
-                    .groupBy("testament")
-                    .value();
-                }
-                else {                                           
+                if (this.books.length > 0) {
+                    debugger;
+                    return formatAndFilterBooks(this.books, this.bookFilter);
+ 
+                } else {
                     this.$ipc.send("fetch-books");
                     return [];
-                }                   
+                }
             }
         }
-    } 
+    }
 </script>
 
 <style scoped lang="scss">

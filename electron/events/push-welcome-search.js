@@ -1,3 +1,4 @@
 module.exports = ({ sender }, filter) => {
-    sender.send('pull-welcome-search', filter);
+    console.log(`Filter: ${filter}`)
+    sender.send('pull-welcome-search', filter)
 }

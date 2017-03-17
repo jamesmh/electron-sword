@@ -1,15 +1,19 @@
 <template>
-    <div>
-        <p class="content" v-html="text"></p>
-        <router-link to="/" class="home-link">Go Back Home</router-link>
-        <router-link :to="{ name: 'book', params: { id: bookId + 1 } }" class="next">Next Chapter</router-link>
-        <div v-if="bookId > 1">
-            <router-link :to="{ name: 'book', params: { id: bookId - 1 } }" class="prev">Previous Chapter</router-link>
+    <slide-transition direction="down">
+        <div>
+            <p class="content" v-html="text"></p>
+            <router-link to="/" class="home-link">Go Back Home</router-link>
+            <router-link :to="{ name: 'book', params: { id: bookId + 1 } }" class="next">Next Chapter</router-link>
+            <div v-if="bookId > 1">
+                <router-link :to="{ name: 'book', params: { id: bookId - 1 } }" class="prev">Previous Chapter</router-link>
+            </div>
         </div>
-    </div>
+    </slide-transition>
 </template>
 
 <script>
+let provideContentHandler = null;
+
 export default {
     props: [ 'bookId' ],
 
@@ -20,10 +24,12 @@ export default {
     },
 
     mounted(){
-        this.$ipc.on('provide-content', (event, content) => {
-            console.log('content provided');
-            this.content = content;
-        });
+        provideContentHandler = (e, content) => this.content = content;
+        this.$ipc.on('provide-content', provideContentHandler);
+    },
+
+    destroyed () {
+        this.$ipc.removeListener('provide-content', provideContentHandler);
     },
 
     computed: {

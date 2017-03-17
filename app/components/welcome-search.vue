@@ -4,7 +4,7 @@
         <div class="col col-8">
             <div class="form-group">
                 <label for="welcome-serach-input">{{ label }}</label>
-                <input id="welcome-search-input" type="text" @keypress="changed" v-model="userInput" :placeholder="inputPlaceholder" class="form-control"/>
+                <input id="welcome-search-input" type="text" v-on:input="welcomeSearch" v-model="userInput" :placeholder="inputPlaceholder" class="form-control"/>
             </div>
         </div>
         <div class="col col-2"></div>
@@ -22,7 +22,7 @@
         },
 
         methods: {
-            changed(e) {
+            welcomeSearch(e) {
                 this.$ipc.send('push-welcome-search', e.target.value);
             }
         }

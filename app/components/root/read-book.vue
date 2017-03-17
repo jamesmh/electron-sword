@@ -1,8 +1,6 @@
 <template>
     <div>
-        <slide-transition>
         <reader :bookId="id"></reader>
-        </slide-transition>
     </div>
 </template>
 

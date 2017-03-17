@@ -18,3 +18,7 @@
 .animated[data-v-d3da707a] {
     animation-duration: .4s;
 }
+
+.list-transition-move[data-v-3a323608] {
+    transition: transform .4s;
+}

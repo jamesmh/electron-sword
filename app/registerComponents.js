@@ -5,6 +5,7 @@ import BookList from './components/book-list.vue'
 import SlideTransition from './transitions/slide.vue';
 import Reader from './components/reader.vue';
 import ReadBook from './components/root/read-book.vue';
+import ListTransition from './transitions/list.vue';
 
 export default Vue => {
     Vue.component('main-app', App);
@@ -12,6 +13,7 @@ export default Vue => {
     Vue.component('welcome-search', WelcomeSearch);
     Vue.component('book-list', BookList);
     Vue.component('slide-transition', SlideTransition);
+    Vue.component('list-transition', ListTransition);
     Vue.component('reader', Reader);
     Vue.component('read-book', ReadBook);
 }

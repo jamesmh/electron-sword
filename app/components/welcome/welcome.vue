@@ -1,6 +1,9 @@
 <template>
     <div class="main">
-        <h1 class="welcome">Welcome!</h1>
+        <h1 class="title">
+            <span class="icon rounded-circle" style="background-image: url('./static/img/sword.png')"></span>
+            {{ title }}
+        </h1>
         <p class="instructions">
             {{ instructions }}
         </p>
@@ -15,18 +18,30 @@
     export default {
         data() {
             return {
+                title: this.$globals.resources.welcome.title,
                 instructions: this.$globals.resources.welcome.instructions
             }
         }
     }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
     .main {
         text-align: center;
     }
-    .welcome {
-        margin-top:80px;
+
+    .title {
+        margin-top:30px;
+        margin-bottom: 10px;
+
+        .icon {
+            height: 60px;
+            width: 60px;
+            background-size: contain;
+            display: inline-block;
+            vertical-align: sub;
+            box-shadow: #fff 0 0 6px;
+        }
     }
     
     .instructions {

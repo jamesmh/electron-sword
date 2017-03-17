@@ -121,7 +121,7 @@
     
     .navigation {
         background-color: #333;
-        height:120px;
+        height:auto;
         width: 120px;
         position: fixed;
         left: 4px;

@@ -25,7 +25,11 @@ module.exports = {
              {
                 test: /\.s[a|c]ss$/,
                 loader: 'style!css!sass'
-            }
+            },
+             {
+                 test: /\.(png|jpg)$/,
+                 loader: 'url-loader?limit=8192'
+             }
         ],
         rules: [{
                 test: /\.vue$/,

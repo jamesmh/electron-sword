@@ -2,6 +2,9 @@
   <transition-group
     name="list-transition"
     :tag="tag"
+     enter-active-class="animated bounceIn"
+    leave-active-class="animated bounceOut"
+    mode="out-in"
   >
   <slot></slot>
   </transition-group>
@@ -14,7 +17,7 @@ export default {
 </script>
 
 <style scoped>
-    .list-transition-move {
-        transition: transform .4s;
+    .animated {
+        animation-duration: .6s;
     }
 </style>

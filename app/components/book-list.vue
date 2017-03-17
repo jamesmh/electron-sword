@@ -3,7 +3,7 @@
         <div class="row books">
             <div class="col col-6" v-for="t in testaments"> 
                 <list-transition tag="ul">                
-                    <li v-for="book in t" :key="book">
+                    <li v-for="book in t" :key="book" class="book-link">
                         <router-link :to="{ name: 'book', params: { id: book.id } }">{{ book.name }}</router-link>
                     </li>   
                 </list-transition>           
@@ -13,7 +13,7 @@
 </template>
 
 <script>
-    import { formatAndFilterBooks } from '../service/bookService';
+    import { formatAndFilterBooks } from '../services/bookService';
     let pullSearchHandler = null;
     let provideBooksHandler = null;
 
@@ -30,22 +30,20 @@
             pullSearchHandler = (e, filterFromSearch) => this.bookFilter = filterFromSearch;
             provideBooksHandler = (e, books) => this.books = books;
             this.$ipc.on('pull-welcome-search', pullSearchHandler);
-            this.$ipc.on('provide-books', provideBooksHandler);
+            this.$ipc.on('pull-books', provideBooksHandler);
         },
 
         destroyed () {
             this.$ipc.removeListener("pull-welcome-search", pullSearchHandler);
-            this.$ipc.removeListener("provide-books", provideBooksHandler);
+            this.$ipc.removeListener("pull-books", provideBooksHandler);
         },
 
         computed: {
             testaments() {
                 if (this.books.length > 0) {
-                    debugger;
-                    return formatAndFilterBooks(this.books, this.bookFilter);
- 
+                    return formatAndFilterBooks(this.books, this.bookFilter); 
                 } else {
-                    this.$ipc.send("fetch-books");
+                    this.$ipc.send("push-books");
                     return [];
                 }
             }
@@ -57,17 +55,17 @@
     .books {
         padding-left:10%;
         padding-right:10%;  
-
-        ul li {
-            list-style: none;
-            margin-top: 2px;
-            margin-bottom: 2px;
-            padding-top: 2px;
-            padding-bottom: 2px;
-
-            &:active {
-                color: #5cb3fd;
-            }
-        } 
     }   
+
+    .book-link {
+        padding: 0;
+        list-style-type: none;
+        margin:0;
+
+        a {
+            padding: 0;
+            margin: 0;
+            font-size: 12px;
+        }
+    }
 </style>

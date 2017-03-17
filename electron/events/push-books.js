@@ -9,10 +9,10 @@ module.exports = ({sender}, args) => {
             .then(books => {
                 books = JSON.parse(books);
                 global.Sword.books = books.resultset.keys;
-                sender.send('provide-books', books);
+                sender.send('pull-books', books);
             })
     }
     else {
-        sender.send('provide-books', global.Sword.books);
+        sender.send('pull-books', global.Sword.books);
     }
 }

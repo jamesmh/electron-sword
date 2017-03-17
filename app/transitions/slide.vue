@@ -3,6 +3,7 @@
     name="slide"
     :enter-active-class="enterClass"
     :leave-active-class="leaveClass"
+    mode="out-in"
     >
         <slot></slot>
     </transition>
@@ -34,6 +35,6 @@ export default {
 
 <style scoped>
     .animated {
-        animation-duration: .4s;
+        animation-duration: .6s;
     }
 </style>

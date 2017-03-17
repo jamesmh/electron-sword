@@ -12,6 +12,9 @@
 </template>
 
 <script>
+    const _ = require('lodash');
+    let pushSearchTimeout = null;
+
     export default {
         data() {
             return {
@@ -23,7 +26,8 @@
 
         methods: {
             welcomeSearch(e) {
-                this.$ipc.send('push-welcome-search', e.target.value);
+                clearTimeout(pushSearchTimeout);
+                pushSearchTimeout = setTimeout(_ => this.$ipc.send('push-welcome-search', e.target.value), 300);
             }
         }
     }

@@ -16,11 +16,11 @@
 }
 
 .animated[data-v-d3da707a] {
-    animation-duration: .4s;
+    animation-duration: .6s;
 }
 
-.list-transition-move[data-v-3a323608] {
-    transition: transform .4s;
+.animated[data-v-3a323608] {
+    animation-duration: .6s;
 }
 html {
   min-width: 800px;

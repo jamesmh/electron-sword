@@ -4,7 +4,7 @@
   "description": "> An electron-vue project",
   "main": "./main.js",
   "scripts": {
-    "start": "webpack & electron ./main.js",
+    "start": "webpack && electron ./main.js",
     "build-prod": "webpack webpack.config.prod.js"
   },
   "repository": {

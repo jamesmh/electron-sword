@@ -35,12 +35,14 @@
 
 <style scoped lang="scss">
     .form-group input {
+        font-family: 'Lato', sans-serif;
         background-color: transparent;
-        color: #eee;
+        color: #fff;
+        font-weight: 300;
 
         &:active {
             border-color: #5cb3fd;
-        }          
+        }                  
     }  
     
 </style>

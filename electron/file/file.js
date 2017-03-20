@@ -11,8 +11,11 @@ const readJsonPromise = filePath => {
     return readPromise(filePath).then(file => JSON.parse(file));
 }
 
+const loadJsonSync = filePath => JSON.parse(fs.readFileSync(filePath))
+
 module.exports = {
     readPromise: readPromise,
-    readJsonPromise: readJsonPromise
+    readJsonPromise: readJsonPromise,
+    loadJsonSync: loadJsonSync
 }
 

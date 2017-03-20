@@ -31877,7 +31877,7 @@ exports = module.exports = __webpack_require__(1)(undefined);
 
 
 // module
-exports.push([module.i, "\n.form-group input[data-v-1c5eeea1] {\n  background-color: transparent;\n  color: #eee;\n}\n.form-group input[data-v-1c5eeea1]:active {\n    border-color: #5cb3fd;\n}\n", ""]);
+exports.push([module.i, "\n.form-group input[data-v-1c5eeea1] {\n  font-family: 'Lato', sans-serif;\n  background-color: transparent;\n  color: #fff;\n  font-weight: 300;\n  border-right: 1px solid transparent;\n}\n.form-group input[data-v-1c5eeea1]:focus {\n    animation: PulseAttention 1.5s cubic-bezier(0.215, 0.61, 0.355, 1) forwards infinite;\n}\n@keyframes PulseAttention {\n50% {\n    border-color: #5cb3fd;\n}\n}\n", ""]);
 
 // exports
 

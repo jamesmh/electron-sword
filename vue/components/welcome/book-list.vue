@@ -77,6 +77,7 @@
       padding: 0;
       margin: 0;
       font-size: 13px;
+      
       &:hover {
         border-color: #5cb3fd;
       }

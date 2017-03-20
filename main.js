@@ -1,11 +1,13 @@
 const { app, BrowserWindow, ipcMain } = require('electron');
 const path = require("path");
 const fs = require('fs');
+const { loadJsonSync } = require('./electron/file/file');
+const registerIpcHandlers = require('./electron/bootstrap/ipcRegistration').Register;
 
 global.Sword = {
-  resources: require('./electron/bootstrap/loadJson').From(path.join(__dirname, "static", "resources.json"))
+  resources: loadJsonSync(path.join(__dirname, "static", "resources.json"))
 };
-require('./electron/bootstrap/ipcRegistration').Register(ipcMain);
+registerIpcHandlers(ipcMain);
 
 app.on("ready", _ => {
 // Create the browser window.

@@ -27,6 +27,7 @@
 
 <script>
     let provideContentHandler = null;
+    const ChapterHtml = require('../../../domains/chapter/chapterHtml');
 
     export default {
         props: ['bookId'],
@@ -75,12 +76,14 @@
             },
 
             fetchContent() {
+                console.log(`bookID: ${this.currentBookId}, chapter: ${this.chapter}`)
                 this.$ipc.send('push-content', this.currentBookId, this.chapter);
             },
 
             registerFetchContent() {
                 provideContentHandler = (e, content, numberOfChapters, isFirstChapter, isLastChapter) => {
-                    this.content = content;
+                    debugger;
+                    this.content = new ChapterHtml(content).toHtml();
                     this.numberOfChapters = numberOfChapters;
                     this.isFirstChapter = isFirstChapter;
                     this.isLastChapter = isLastChapter;

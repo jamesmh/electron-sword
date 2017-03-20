@@ -3,10 +3,10 @@
     <div class="row books">
       <div class="col col-6" v-for="t in testaments">
           <div v-for="book in t" class="book-link">
-                      <list-transition tag="div">
-                          <div :key="book">
-            <router-link :to="{ name: 'book', params: { bookId: book.id } }">{{ book.name }}</router-link>
-            </div>
+            <list-transition tag="div">
+              <div :key="book">
+                <router-link :to="{ name: 'book', params: { bookId: book.id } }">{{ book.name }}</router-link>
+              </div>
               </list-transition>
           </div>
       
@@ -16,40 +16,40 @@
 </template>
 
 <script>
-  import {
-    formatAndFilterBooks
-  } from '../../services/bookService';
   let pullSearchHandler = null;
-  let provideBooksHandler = null;
+  let pullBooksHandler = null;
+  const TestamentList = require('../../../domains/testament/testamentList');
 
   export default {
     props: ['filter'],
     data() {
       return {
-        books: [],
+        testamentList: null,
         bookFilter: this.filter
       }
     },
 
     mounted() {
       pullSearchHandler = (e, filterFromSearch) => this.bookFilter = filterFromSearch;
-      provideBooksHandler = (e, books) => this.books = books;
+      pullBooksHandler = (e, testamentBooks) => this.testamentList = testamentBooks;
       this.$ipc.on('pull-welcome-search', pullSearchHandler);
-      this.$ipc.on('pull-books', provideBooksHandler);
+      this.$ipc.on('pull-books', pullBooksHandler);
     },
 
     destroyed() {
       this.$ipc.removeListener("pull-welcome-search", pullSearchHandler);
-      this.$ipc.removeListener("pull-books", provideBooksHandler);
+      this.$ipc.removeListener("pull-books", pullBooksHandler);
     },
 
     computed: {
       testaments() {
-        if (this.books.length > 0) {
-          return formatAndFilterBooks(this.books, this.bookFilter);
+        if (this.testamentList) {
+          console.log('in computed')
+          console.log(this.testamentList)
+          return TestamentList.filterByBookName(this.testamentList, this.bookFilter);
         } else {
           this.$ipc.send("push-books");
-          return [];
+          return null;
         }
       }
     }

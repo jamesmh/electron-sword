@@ -1,9 +1,9 @@
 <template>
     <div class="main">
-        <h1 class="title">
+        <h2 class="title">
             <span class="icon rounded-circle" style="background-image: url('./static/img/sword.png')"></span>
             {{ title }}
-        </h1>
+        </h2>
         <p class="instructions">
             {{ instructions }}
         </p>
@@ -35,8 +35,8 @@
         margin-bottom: 10px;
 
         .icon {
-            height: 60px;
-            width: 60px;
+            height: 40px;
+            width: 40px;
             background-size: contain;
             display: inline-block;
             vertical-align: sub;

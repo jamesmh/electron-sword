@@ -1,7 +1,7 @@
 {
     "welcome": {
         "title": "Electron Sword",
-        "instructions": "Welcome to Electron Sword! This is a free / open-source product designed to bring a modern twist to bible reading. Because this program is free to use, we only have a short selection of bible translations to select from. We hope that you enjoy using Electron Sword!"
+        "instructions": "Welcome to Electron Sword! This is a free / open-source product designed to bring a modern twist to bible reading. We hope that you enjoy using Electron Sword!"
     },
 
     "welcome-search": {

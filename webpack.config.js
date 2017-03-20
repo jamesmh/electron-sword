@@ -7,7 +7,7 @@ const extractSass = new ExtractTextPlugin({
 });
 
 module.exports = {
-    entry: './app/main.js',
+    entry: './vue/main.js',
     output: {
         path: path.resolve(__dirname, './sourceDist'),
         filename: 'build.js'

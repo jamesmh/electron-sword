@@ -117,8 +117,10 @@
         right: 0;
         width: 90%;
         padding: 10%;
-        padding-top: 15%;
-        font-size: 18px;
+        padding-top: 12%;
+        font-size: 20px;
+        font-weight: 300;
+        line-height: 1.5;
     }
     
     .navigation {
@@ -128,7 +130,6 @@
         position: fixed;
         left: 4px;
         top: 4px;
-        border: 4px solid transparent;
         border: 4px solid transparent;
         transition: all .3s;
         z-index: 500;

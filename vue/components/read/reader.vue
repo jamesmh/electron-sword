@@ -2,7 +2,7 @@
     <div>
         <div class="chapters">
             <div class="form-group">
-                <select class="form-control" @change="fetchChapter">                 
+                <select class="form-control" @change="fetchChapter" :value="this.chapter">                 
                     <option v-for="chapterOption in numberOfChapters" :value="chapterOption" :disabled="chapterOption === this.chapter">
                         Chapter: {{ chapterOption }}
                     </option>
@@ -82,7 +82,6 @@
 
             registerFetchContent() {
                 provideContentHandler = (e, content, numberOfChapters, isFirstChapter, isLastChapter) => {
-                    debugger;
                     this.content = new ChapterHtml(content).toHtml();
                     this.numberOfChapters = numberOfChapters;
                     this.isFirstChapter = isFirstChapter;
@@ -166,6 +165,7 @@
         }
 
         select {
+            margin-top:12px;
             font-size: 12px;
             font-weight: 500;
             color: #5cb3fd;

@@ -9,8 +9,8 @@
         </p>
 
         <div class="gap"></div>
-        <welcome-search></welcome-search>
-        <book-list></book-list>
+        <book-selection-search></book-selection-search>
+        <book-selection-list></book-selection-list>
     </div>
 </template>
 

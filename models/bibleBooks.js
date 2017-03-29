@@ -1,6 +1,6 @@
 const _ = require('lodash');
 
-class BookContents {
+class BibleBooks {
     constructor(unparsedJsonFile) {      
         this.books = _(JSON.parse(unparsedJsonFile).resultset.row)
             .map(formatVerses)
@@ -12,7 +12,7 @@ class BookContents {
         return this.books[id];
     }
 }
-module.exports = BookContents;
+module.exports = BibleBooks;
 
 
 /*----------*/

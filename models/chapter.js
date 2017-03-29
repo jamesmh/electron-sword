@@ -1,4 +1,4 @@
-class ChapterHtml {
+class Chapter {
     constructor(content) {
         this.content = content;
     }
@@ -9,4 +9,4 @@ class ChapterHtml {
     }       
 }
 
-module.exports = ChapterHtml;
+module.exports = Chapter;

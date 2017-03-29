@@ -2,15 +2,16 @@ const { readPromise } = require('../file/file');
 const path = require('path');
 const { ipcMain } = require('electron')
 const _ = require('lodash');
-const BookContents = require('../../domains/book/bookContents');
+const BibleBooks = require('../../models/bibleBooks');
 
 //TODO: clean this up - get logic into a Domain object
 
 module.exports = ({ sender }, bookId, chapter) => {
+       console.log("push content requested")
     if (global.Sword.bible === undefined) {
         fetchKjv()
             .then(file => {                
-                global.Sword.bible = new BookContents(file);      
+                global.Sword.bible = new BibleBooks(file);      
                 const selectedBook = global.Sword.bible.getBookById(bookId);
                 sendProvideContentEvent(sender, selectedBook, chapter);
             })

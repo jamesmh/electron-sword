@@ -18,20 +18,20 @@
 <script>
   let pullSearchHandler = null;
   let pullBooksHandler = null;
-  const TestamentList = require('../../../domains/testament/testamentList');
+  const TestamentList = require('../../../models/testaments');
 
   export default {
     props: ['filter'],
     data() {
       return {
-        testamentList: null,
+        testamentBooks: null,
         bookFilter: this.filter
       }
     },
 
     mounted() {
       pullSearchHandler = (e, filterFromSearch) => this.bookFilter = filterFromSearch;
-      pullBooksHandler = (e, testamentBooks) => this.testamentList = testamentBooks;
+      pullBooksHandler = (e, testamentBooks) => this.testamentBooks = testamentBooks;
       this.$ipc.on('pull-welcome-search', pullSearchHandler);
       this.$ipc.on('pull-books', pullBooksHandler);
     },
@@ -43,10 +43,10 @@
 
     computed: {
       testaments() {
-        if (this.testamentList) {
+        if (this.testamentBooks) {
           console.log('in computed')
-          console.log(this.testamentList)
-          return TestamentList.filterByBookName(this.testamentList, this.bookFilter);
+          console.log(this.testamentBooks)
+          return TestamentList.filterByBookName(this.testamentBooks, this.bookFilter);
         } else {
           this.$ipc.send("push-books");
           return null;

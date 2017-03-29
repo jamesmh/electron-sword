@@ -10,7 +10,7 @@ class TestamentList {
     }
 
     toArray() {
-        return this.testaments;
+        return this.testaments
     }
 }
 
@@ -39,7 +39,7 @@ const filterBookByName = filter => book => {
     if (filter && filter !== '') {
         return book.name.toUpperCase().indexOf(filter.toUpperCase()) > -1
     }
-    return true;
+    return true
 }
 
-module.exports = TestamentList;
+module.exports = TestamentList

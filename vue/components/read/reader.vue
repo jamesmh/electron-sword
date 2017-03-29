@@ -28,7 +28,7 @@
 
 <script>
     let provideContentHandler = null;
-    const ChapterHtml = require('../../../domains/chapter/chapterHtml');
+    const Chapter = require('../../../models/chapter');
 
     export default {
         props: ['bookId'],
@@ -83,7 +83,7 @@
 
             registerFetchContent() {
                 provideContentHandler = (e, content, numberOfChapters, isFirstChapter, isLastChapter) => {
-                    this.content = new ChapterHtml(content).toHtml();
+                    this.content = new Chapter(content).toHtml();
                     this.numberOfChapters = numberOfChapters;
                     this.isFirstChapter = isFirstChapter;
                     this.isLastChapter = isLastChapter;

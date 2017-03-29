@@ -29633,6 +29633,8 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
+//
+//
 
 var provideContentHandler = null;
 var ChapterHtml = __webpack_require__(17);
@@ -31905,7 +31907,7 @@ exports = module.exports = __webpack_require__(1)(undefined);
 
 
 // module
-exports.push([module.i, "\n.home-link[data-v-6cd87f6a],\n.next[data-v-6cd87f6a],\n.prev[data-v-6cd87f6a] {\n  padding: 8px;\n  border: 1px solid #333;\n  color: #fff;\n  transition: .3s all;\n  display: block;\n  text-decoration: none;\n  cursor: pointer;\n  text-align: center;\n}\n.home-link[data-v-6cd87f6a]:hover,\n  .next[data-v-6cd87f6a]:hover,\n  .prev[data-v-6cd87f6a]:hover {\n    border-color: #5cb3fd;\n    background-color: #5cb3fd;\n    color: #fff;\n}\n.content[data-v-6cd87f6a] {\n  position: absolute;\n  right: 0;\n  width: 90%;\n  padding: 10%;\n  padding-top: 12%;\n  font-size: 20px;\n  font-weight: 300;\n  line-height: 1.5;\n}\n.navigation[data-v-6cd87f6a] {\n  background-color: #333;\n  height: auto;\n  width: 120px;\n  position: fixed;\n  left: 4px;\n  top: 4px;\n  border: 4px solid transparent;\n  transition: all .3s;\n  z-index: 500;\n}\n.navigation[data-v-6cd87f6a]:hover {\n    border-color: #5cb3fd;\n}\n.navigation .prev-col[data-v-6cd87f6a] {\n    padding-right: 0;\n}\n.navigation .next-col[data-v-6cd87f6a] {\n    padding-left: 0;\n}\n.chapters[data-v-6cd87f6a] {\n  height: auto;\n  width: 160px;\n  background-color: #333;\n  padding: 8px;\n  position: absolute;\n  top: 4px;\n  right: 4px;\n  border: 4px solid transparent;\n  border: 4px solid transparent;\n  transition: all .3s;\n  z-index: 500;\n}\n.chapters[data-v-6cd87f6a]:hover, .chapters[data-v-6cd87f6a]:active {\n    border-color: #5cb3fd;\n    border-bottom-radius: 8px;\n}\n.chapters select[data-v-6cd87f6a] {\n    margin-top: 12px;\n    font-size: 12px;\n    font-weight: 500;\n    color: #5cb3fd;\n    border-color: #5cb3fd;\n    background-color: transparent;\n}\n", ""]);
+exports.push([module.i, "\n.home-link[data-v-6cd87f6a],\n.next[data-v-6cd87f6a],\n.prev[data-v-6cd87f6a] {\n  padding: 8px;\n  border: 1px solid #333;\n  color: #fff;\n  transition: .3s all;\n  display: block;\n  text-decoration: none;\n  cursor: pointer;\n  text-align: center;\n}\n.home-link[data-v-6cd87f6a]:hover,\n  .next[data-v-6cd87f6a]:hover,\n  .prev[data-v-6cd87f6a]:hover {\n    border-color: #5cb3fd;\n    background-color: #5cb3fd;\n    color: #fff;\n}\n.content[data-v-6cd87f6a] {\n  position: absolute;\n  right: 0;\n  width: 90%;\n  padding: 10%;\n  padding-top: 12%;\n  font-size: 20px;\n  font-weight: 300;\n  line-height: 1.5;\n  transition: all .6s;\n}\n.navigation[data-v-6cd87f6a] {\n  background-color: #333;\n  height: auto;\n  width: 120px;\n  position: fixed;\n  left: 4px;\n  top: 4px;\n  border: 4px solid transparent;\n  transition: all .3s;\n  z-index: 500;\n}\n.navigation[data-v-6cd87f6a]:hover {\n    border-color: #5cb3fd;\n}\n.navigation .prev-col[data-v-6cd87f6a] {\n    padding-right: 0;\n}\n.navigation .next-col[data-v-6cd87f6a] {\n    padding-left: 0;\n}\n.chapters[data-v-6cd87f6a] {\n  height: auto;\n  width: 160px;\n  background-color: #333;\n  padding: 8px;\n  position: absolute;\n  top: 4px;\n  right: 4px;\n  border: 4px solid transparent;\n  border: 4px solid transparent;\n  transition: all .3s;\n  z-index: 500;\n}\n.chapters[data-v-6cd87f6a]:hover, .chapters[data-v-6cd87f6a]:active {\n    border-color: #5cb3fd;\n    border-bottom-radius: 8px;\n}\n.chapters select[data-v-6cd87f6a] {\n    margin-top: 12px;\n    font-size: 12px;\n    font-weight: 500;\n    color: #5cb3fd;\n    border-color: #5cb3fd;\n    background-color: transparent;\n}\n", ""]);
 
 // exports
 
@@ -32631,12 +32633,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "aria-hidden": "true"
     }
-  })]) : _vm._e()])])], 1), _vm._v(" "), _c('p', {
+  })]) : _vm._e()])])], 1), _vm._v(" "), _c('fade-transition', [_c('p', {
     staticClass: "content",
     domProps: {
       "innerHTML": _vm._s(_vm.text)
     }
-  })])
+  })])], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {

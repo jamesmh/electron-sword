@@ -21,6 +21,7 @@
                 </div>
             </div>
         </div>
+        
         <p class="content" v-html="text"></p>
     </div>
 </template>
@@ -156,13 +157,13 @@
         top: 4px;
         right: 4px;
         border: 4px solid transparent;
-        border: 4px solid transparent;
         transition: all .3s;
         z-index: 500;
 
         &:hover, &:active {
             border-color: #5cb3fd;
-            border-bottom-radius: 8px;
+            border-bottom-right-radius: 8px;
+            border-bottom-left-radius: 8px;
         }
 
         select {

@@ -9,7 +9,9 @@
         </p>
 
         <div class="gap"></div>
-        <book-selection-search></book-selection-search>
+        <div class="search">
+            <book-selection-search></book-selection-search>
+        </div>
         <book-selection-list></book-selection-list>
     </div>
 </template>
@@ -28,6 +30,7 @@
 <style scoped lang="scss">
     .main {
         text-align: center;
+        padding-bottom: 80px;
     }
 
     .title {
@@ -53,5 +56,16 @@
     
     .gap {
         margin-top: 60px;
+    }
+
+    .search {
+        position:fixed;
+        bottom: 0;
+        left:0;
+        width:100vw;
+        z-index: 500;
+        background-color: #111;
+        color: #fff;
+        padding-top:4px;
     }
 </style>

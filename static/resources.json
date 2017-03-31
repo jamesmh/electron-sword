@@ -5,7 +5,7 @@
     },
 
     "welcome-search": {
-        "label": "Enter a book to narrow the list below.",
+        "label": "Search Books:",
         "placeholder": "Matthew 10:22"
     }
 }

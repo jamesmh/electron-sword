@@ -29786,8 +29786,6 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
-//
-//
 
 var _ = __webpack_require__(6);
 var pushSearchTimeout = null;
@@ -29824,6 +29822,8 @@ exports.default = {
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
+//
+//
 //
 //
 //
@@ -31859,7 +31859,7 @@ exports = module.exports = __webpack_require__(1)(undefined);
 
 
 // module
-exports.push([module.i, "\n.form-group input[data-v-0528b0a2] {\n  font-family: 'Lato', sans-serif;\n  background-color: transparent;\n  color: #fff;\n  font-weight: 300;\n}\n.form-group input[data-v-0528b0a2]:active {\n    border-color: #5cb3fd;\n}\n", ""]);
+exports.push([module.i, "\n.form-group[data-v-0528b0a2] {\n  padding-left: 10px;\n  padding-right: 40px;\n}\n.form-group label[data-v-0528b0a2] {\n    font-size: 14px;\n    color: #888;\n    position: absolute;\n    left: 20%;\n    bottom: -2px;\n}\n.form-group input[data-v-0528b0a2] {\n    font-family: 'Lato', sans-serif;\n    background-color: transparent;\n    font-weight: 300;\n    border: none;\n    outline: none;\n    border-bottom: 1px solid #333;\n    border-radius: 0;\n    transition: all .3s ease-in;\n}\n.form-group input[data-v-0528b0a2]:focus {\n      color: #fff;\n      border-bottom: 8px solid #5cb3fd;\n      font-size: 24px;\n}\n", ""]);
 
 // exports
 
@@ -31873,7 +31873,7 @@ exports = module.exports = __webpack_require__(1)(undefined);
 
 
 // module
-exports.push([module.i, "\n.main[data-v-19d7cea4] {\n  text-align: center;\n}\n.title[data-v-19d7cea4] {\n  margin-top: 30px;\n  margin-bottom: 10px;\n}\n.title .icon[data-v-19d7cea4] {\n    height: 40px;\n    width: 40px;\n    background-size: contain;\n    display: inline-block;\n    vertical-align: sub;\n    box-shadow: #fff 0 0 6px;\n}\n.instructions[data-v-19d7cea4] {\n  font-size: 14px;\n  width: 80%;\n  margin: 0 auto;\n  font-weight: 200;\n}\n.gap[data-v-19d7cea4] {\n  margin-top: 60px;\n}\n", ""]);
+exports.push([module.i, "\n.main[data-v-19d7cea4] {\n  text-align: center;\n  padding-bottom: 80px;\n}\n.title[data-v-19d7cea4] {\n  margin-top: 30px;\n  margin-bottom: 10px;\n}\n.title .icon[data-v-19d7cea4] {\n    height: 40px;\n    width: 40px;\n    background-size: contain;\n    display: inline-block;\n    vertical-align: sub;\n    box-shadow: #fff 0 0 6px;\n}\n.instructions[data-v-19d7cea4] {\n  font-size: 14px;\n  width: 80%;\n  margin: 0 auto;\n  font-weight: 200;\n}\n.gap[data-v-19d7cea4] {\n  margin-top: 60px;\n}\n.search[data-v-19d7cea4] {\n  position: fixed;\n  bottom: 0;\n  left: 0;\n  width: 100vw;\n  z-index: 500;\n  background-color: #111;\n  color: #fff;\n  padding-top: 4px;\n}\n", ""]);
 
 // exports
 
@@ -31887,7 +31887,7 @@ exports = module.exports = __webpack_require__(1)(undefined);
 
 
 // module
-exports.push([module.i, "\n.books[data-v-3e999765] {\n  padding-left: 10%;\n  padding-right: 10%;\n  margin-bottom: 20px;\n}\n.book-link[data-v-3e999765] {\n  width: 50%;\n  display: block;\n  float: left;\n  box-sizing: border-box;\n}\n.book-link a[data-v-3e999765] {\n    color: #5cb3fd;\n    transition: all .6s;\n    border-bottom: 3px solid transparent;\n    text-decoration: none;\n    padding: 0;\n    margin: 0;\n    font-size: 13px;\n}\n.book-link a[data-v-3e999765]:hover {\n      border-color: #5cb3fd;\n}\n", ""]);
+exports.push([module.i, "\n.books[data-v-3e999765] {\n  padding-left: 10%;\n  padding-right: 10%;\n  margin-bottom: 20px;\n}\n.book-link[data-v-3e999765] {\n  width: 50%;\n  display: block;\n  float: left;\n  box-sizing: border-box;\n}\n.book-link a[data-v-3e999765] {\n    color: #5cb3fd;\n    transition: all .6s;\n    border-bottom: 3px solid transparent;\n    text-decoration: none;\n    padding: 0;\n    margin: 0;\n    font-size: 15px;\n}\n.book-link a[data-v-3e999765]:hover {\n      color: #fff;\n      border-color: #5cb3fd;\n}\n", ""]);
 
 // exports
 
@@ -32383,18 +32383,16 @@ module.exports = Component.exports
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: "row"
+    staticClass: "form-group row"
   }, [_c('div', {
     staticClass: "col col-2"
-  }), _vm._v(" "), _c('div', {
-    staticClass: "col col-8"
-  }, [_c('div', {
-    staticClass: "form-group"
   }, [_c('label', {
     attrs: {
       "for": "welcome-serach-input"
     }
-  }, [_vm._v(_vm._s(_vm.label))]), _vm._v(" "), _c('input', {
+  }, [_vm._v(_vm._s(_vm.label))])]), _vm._v(" "), _c('div', {
+    staticClass: "col-10"
+  }, [_c('input', {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -32416,9 +32414,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.userInput = $event.target.value
       }, _vm.welcomeSearch]
     }
-  })])]), _vm._v(" "), _c('div', {
-    staticClass: "col col-2"
-  })])
+  })])])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
@@ -32468,7 +32464,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "instructions"
   }, [_vm._v("\n        " + _vm._s(_vm.instructions) + "\n    ")]), _vm._v(" "), _c('div', {
     staticClass: "gap"
-  }), _vm._v(" "), _c('book-selection-search'), _vm._v(" "), _c('book-selection-list')], 1)
+  }), _vm._v(" "), _c('div', {
+    staticClass: "search"
+  }, [_c('book-selection-search')], 1), _vm._v(" "), _c('book-selection-list')], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {

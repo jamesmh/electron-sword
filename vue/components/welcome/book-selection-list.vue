@@ -71,9 +71,11 @@
       text-decoration: none;
       padding: 0;
       margin: 0;
-      font-size: 13px;
+      font-size: 16px;
+      font-weight:300;
       
       &:hover {
+        color: #fff;
         border-color: #5cb3fd;
       }
     }

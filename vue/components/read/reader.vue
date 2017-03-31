@@ -28,7 +28,7 @@
 
 <script>
     let provideContentHandler = null;
-    const Chapter = require('../../../models/chapter');
+    const Chapter = require('../../../app/models/chapter');
 
     export default {
         props: ['bookId'],

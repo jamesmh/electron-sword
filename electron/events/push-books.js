@@ -1,7 +1,7 @@
 const { readPromise } = require('../file/file');
 const path = require('path');
 const { ipcMain } = require('electron')
-const TestamentList = require('../../models/testaments')
+const TestamentList = require('../../app/models/testaments')
 const booksFilePath = path.join(__dirname, "..", "..", "static", "bibles", "books.json")
 
 module.exports = ({ sender }, args) => {

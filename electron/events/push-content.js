@@ -2,7 +2,7 @@ const { readPromise } = require('../file/file');
 const path = require('path');
 const { ipcMain } = require('electron')
 const _ = require('lodash');
-const BibleBooks = require('../../models/bibleBooks');
+const BibleBooks = require('../../app/models/bibleBooks');
 
 //TODO: clean this up - get logic into a Domain object
 

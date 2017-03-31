@@ -18,7 +18,7 @@
 <script>
   let pullSearchHandler = null;
   let pullBooksHandler = null;
-  const TestamentList = require('../../../models/testaments');
+  const TestamentList = require('../../../app/models/testaments');
 
   export default {
     props: ['filter'],

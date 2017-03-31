@@ -457,7 +457,7 @@ function updateLink(linkElement, options, obj) {
 	on by default.  Otherwise default to the convertToAbsoluteUrls option
 	directly
 	*/
-	const autoFixUrls = options.convertToAbsoluteUrls === undefined && sourceMap;
+	var autoFixUrls = options.convertToAbsoluteUrls === undefined && sourceMap;
 
 	if (options.convertToAbsoluteUrls || autoFixUrls){
 		css = fixUrls(css);
@@ -526,7 +526,7 @@ var Component = __webpack_require__(0)(
   /* cssModules */
   null
 )
-Component.options.__file = "C:\\Users\\jhickey\\Documents\\Personal Work\\electron-sword\\vue\\App.vue"
+Component.options.__file = "/home/james/Code/githubrepos/electron-sword/vue/App.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] App.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -17842,7 +17842,7 @@ var Component = __webpack_require__(0)(
   /* cssModules */
   null
 )
-Component.options.__file = "C:\\Users\\jhickey\\Documents\\Personal Work\\electron-sword\\vue\\components\\read\\reader.vue"
+Component.options.__file = "/home/james/Code/githubrepos/electron-sword/vue/components/read/reader.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] reader.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -17880,7 +17880,7 @@ var Component = __webpack_require__(0)(
   /* cssModules */
   null
 )
-Component.options.__file = "C:\\Users\\jhickey\\Documents\\Personal Work\\electron-sword\\vue\\components\\welcome\\welcome.vue"
+Component.options.__file = "/home/james/Code/githubrepos/electron-sword/vue/components/welcome/welcome.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] welcome.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -29720,11 +29720,6 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
-//
-//
-//
-//
-//
 
 var pullSearchHandler = null;
 var pullBooksHandler = null;
@@ -32210,7 +32205,7 @@ var Component = __webpack_require__(0)(
   /* cssModules */
   null
 )
-Component.options.__file = "C:\\Users\\jhickey\\Documents\\Personal Work\\electron-sword\\vue\\components\\welcome\\book-selection-list.vue"
+Component.options.__file = "/home/james/Code/githubrepos/electron-sword/vue/components/welcome/book-selection-list.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] book-selection-list.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -32248,7 +32243,7 @@ var Component = __webpack_require__(0)(
   /* cssModules */
   null
 )
-Component.options.__file = "C:\\Users\\jhickey\\Documents\\Personal Work\\electron-sword\\vue\\components\\welcome\\book-selection-search.vue"
+Component.options.__file = "/home/james/Code/githubrepos/electron-sword/vue/components/welcome/book-selection-search.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] book-selection-search.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -32286,7 +32281,7 @@ var Component = __webpack_require__(0)(
   /* cssModules */
   null
 )
-Component.options.__file = "C:\\Users\\jhickey\\Documents\\Personal Work\\electron-sword\\vue\\transitions\\fade.vue"
+Component.options.__file = "/home/james/Code/githubrepos/electron-sword/vue/transitions/fade.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] fade.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -32324,7 +32319,7 @@ var Component = __webpack_require__(0)(
   /* cssModules */
   null
 )
-Component.options.__file = "C:\\Users\\jhickey\\Documents\\Personal Work\\electron-sword\\vue\\transitions\\list.vue"
+Component.options.__file = "/home/james/Code/githubrepos/electron-sword/vue/transitions/list.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] list.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -32362,7 +32357,7 @@ var Component = __webpack_require__(0)(
   /* cssModules */
   null
 )
-Component.options.__file = "C:\\Users\\jhickey\\Documents\\Personal Work\\electron-sword\\vue\\transitions\\slide.vue"
+Component.options.__file = "/home/james/Code/githubrepos/electron-sword/vue/transitions/slide.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] slide.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -32541,13 +32536,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }, _vm._l((t), function(book) {
       return _c('div', {
         staticClass: "book-link"
-      }, [_c('list-transition', {
-        attrs: {
-          "tag": "div"
-        }
-      }, [_c('div', {
-        key: book
       }, [_c('router-link', {
+        key: book,
         attrs: {
           "to": {
             name: 'book',
@@ -32556,7 +32546,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
             }
           }
         }
-      }, [_vm._v(_vm._s(book.name))])], 1)])], 1)
+      }, [_vm._v(_vm._s(book.name))])], 1)
     }))
   }))])
 },staticRenderFns: []}

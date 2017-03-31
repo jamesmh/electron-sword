@@ -3,13 +3,8 @@
     <div class="row books">
       <div class="col col-6" v-for="t in testaments">
           <div v-for="book in t" class="book-link">
-            <list-transition tag="div">
-              <div :key="book">
-                <router-link :to="{ name: 'book', params: { bookId: book.id } }">{{ book.name }}</router-link>
-              </div>
-              </list-transition>
-          </div>
-      
+                <router-link :key="book" :to="{ name: 'book', params: { bookId: book.id } }">{{ book.name }}</router-link>
+          </div>      
       </div>
     </div>
   </div>

@@ -22,7 +22,7 @@
             </div>
         </div>
         
-        <p class="content" v-html="text"></p>
+        <div class="content" v-html="text"></div>
     </div>
 </template>
 
@@ -117,11 +117,11 @@
         position: absolute;
         right: 0;
         width: 90%;
-        padding: 10%;
-        padding-top: 12%;
+        padding-right:40px;
+        padding-top: 120px;
         font-size: 20px;
         font-weight: 300;
-        line-height: 1.5;
+        line-height: 1.5;      
     }
     
     .navigation {
@@ -162,8 +162,6 @@
 
         &:hover, &:active {
             border-color: #5cb3fd;
-            border-bottom-right-radius: 8px;
-            border-bottom-left-radius: 8px;
         }
 
         select {

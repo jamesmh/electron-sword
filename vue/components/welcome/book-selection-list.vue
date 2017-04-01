@@ -40,7 +40,7 @@
       testaments() {
         if (this.testamentBooks) {
           console.log('in computed')
-          console.log(this.testamentBooks)
+          
           return TestamentList.filterByBookName(this.testamentBooks, this.bookFilter);
         } else {
           this.$ipc.send("push-books");

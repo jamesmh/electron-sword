@@ -1,5 +1,8 @@
 # electron-sword
 
+## Demo Video
+[Demo](https://github.com/jamesmh/electron-sword/demo.webwebm)
+
 ## Install
 Clone repo...
 

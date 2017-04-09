@@ -1,8 +1,7 @@
 # electron-sword
 
 ## Demo Video
-[Demo Video Of Application Runing On Ubuntu](https://github.com/jamesmh/electron-sword/raw/master/demo.webm)
-** Click "download" after clicking link **
+[Demo Video Of Application Runing On Ubuntu](https://github.com/jamesmh/electron-sword/raw/master/demo.webm) (*Click "download" after clicking link*)
 
 ## Install
 Clone repo...

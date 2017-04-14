@@ -117,8 +117,10 @@
         position: absolute;
         right: 0;
         width: 90%;
-        padding-right:40px;
+        padding-right:60px;
         padding-top: 120px;
+        padding-bottom:20px;
+        padding-left:50px;
         font-size: 20px;
         font-weight: 300;
         line-height: 1.5;      
